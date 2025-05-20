@@ -1,6 +1,6 @@
 import { HistorySlider } from "../HistorySlider";
 import { ArrowBtn } from "../ui/ArrowBtn";
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import { getTwoDigitNumber, numberAnimation, sliderShowAnimation } from "./utils";
 import { mokDataYears } from "./constants";
 import { CirclePagination } from "../CirclePagination";
