@@ -1,0 +1,173 @@
+@import "src/assets/scss/param";
+
+.main {
+  position: relative;
+  min-height: 100vh;
+  padding: 17rem 8rem 0 8rem;
+  border-right: 1px solid $blueBlackBorder;
+  border-left: 1px solid $blueBlackBorder;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: $blueBlackBorder;
+  }
+}
+
+.title {
+  position: relative;
+  font-weight: 700;
+  font-size: 5.6rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: calc(-8rem - 1px);
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, $blue -5%, $pink 85%);
+  }
+}
+
+.datesWrapper {
+  position: relative;
+  margin: 9.6rem 0 13.6rem 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: calc(100% + 16rem); // 16rem в данном случае это боковые размеры padding
+    height: 1px;
+    transform: translateX(-50%);
+    background-color: $blueBlackBorder;
+  }
+}
+
+.dates {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  font-weight: 700;
+  font-size: 20rem;
+  line-height: 16rem;
+  letter-spacing: -0.02em;
+
+  > span {
+    &:first-child {
+      color: $blue;
+    }
+
+    &:last-child {
+      color: $pink;
+    }
+  }
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5.6rem;
+}
+
+.pagination {
+  font-size: 1.4rem;
+}
+
+.navigation {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (min-width: 48.01em) {
+  .dotPagination {
+    display: none;
+  }
+}
+
+@media (max-width: 48em) {
+  div.main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 12rem;
+    border: none;
+
+    &:before {
+      content: none;
+    }
+  }
+
+  .title {
+    font-size: 4rem;
+    letter-spacing: 0;
+
+    &:before {
+      content: none;
+    }
+  }
+
+  .datesWrapper {
+    position: relative;
+    margin: 11.2rem 0;
+
+    &:before {
+      content: none;
+    }
+  }
+
+  .dates {
+    justify-content: space-between;
+    gap: 0;
+    font-size: 11.2rem;
+    line-height: 14.6rem;
+  }
+
+  .controlBox {
+    position: relative;
+    order: 6;
+  }
+
+  .control {
+    margin-bottom: 0;
+  }
+
+  .pagination {
+    font-size: 2.8rem;
+  }
+
+  .navigation {
+    gap: 1.6rem;
+  }
+
+  .dotPagination {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    gap: 2rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 100%;
+    background-color: $blueBlack;
+    opacity: .4;
+    transition: opacity .3s ease;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

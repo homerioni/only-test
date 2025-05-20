@@ -1,0 +1,52 @@
+@import 'src/assets/scss/param';
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  border: 1px solid $blueBlackSemi;
+
+  > svg {
+    width: 1rem;
+    height: 1.4rem;
+    stroke: $blueBlack;
+    transform: translateX(1px);
+  }
+
+  &.left {
+    > svg {
+      transform: rotate(-180deg) translateX(1px);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+@media (min-width: 48.01em) {
+  .main {
+    > svg {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .main {
+    > svg {
+      width: 1.4rem;
+      height: 1.6rem;
+
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+}

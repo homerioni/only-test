@@ -1,0 +1,98 @@
+@import "src/assets/scss/param";
+
+.main {
+  position: relative;
+}
+
+.sliderWrapper {
+  width: 100%;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  &:first-child {
+    left: -1rem;
+    transform: translate(-100%, -50%);
+  }
+
+  &:last-child {
+    right: 0;
+    transform: translate(100%, -50%);
+  }
+}
+
+.slider {
+  width: 100%;
+  padding-right: 8rem !important;
+  user-select: none;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.date {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: $blue;
+}
+
+.description {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+@media (min-width: 48.01em) {
+  .title {
+    display: none;
+  }
+}
+
+@media (max-width: 48em) {
+  .sliderWrapper {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: $grayBorder 1px solid;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 3.2rem;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .slider {
+    width: 100vw;
+    height: 23rem;
+    padding: 0 4rem !important;
+    margin: 0 -4rem 15.6rem -4rem !important;
+
+    :global(.swiper-slide-active) > .slide {
+      opacity: 1;
+    }
+  }
+
+  .slide {
+    gap: 3rem;
+    opacity: .4;
+    transition: opacity .3s ease;
+  }
+
+  .date {
+    font-size: 3.2rem;
+  }
+
+  .description {
+    font-size: 2.8rem;
+    line-height: 1.45;
+  }
+}

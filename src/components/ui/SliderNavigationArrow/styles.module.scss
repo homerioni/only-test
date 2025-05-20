@@ -1,0 +1,33 @@
+@import "src/assets/scss/param";
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  background-color: white;
+  box-shadow: 0 0 1.5rem rgba(56, 119, 238, 0.1);
+  transition: opacity .3s ease, visibility .3s;
+
+  > svg {
+    width: .8rem;
+    height: 1.2rem;
+
+    > path {
+      stroke: $blue;
+    }
+  }
+
+  &.left {
+    > svg {
+      transform: rotate(-180deg) translateX(1px);
+    }
+  }
+
+  &:disabled {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
